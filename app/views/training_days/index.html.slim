@@ -1,0 +1,13 @@
+table.table-striped.table-hover
+  thead
+    th Date
+    th Mileage
+    th Description
+  tbody
+    - TrainingDay.order("date ASC").each do |day|
+      tr
+        td= day.date
+        td= day.mileage_string
+        td= day.description
+
+
