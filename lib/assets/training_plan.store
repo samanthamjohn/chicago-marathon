@@ -665,7 +665,7 @@ training_days:
   mileage_low: 3
   mileage_high: 4
   date: 2015-10-31
-  description: 30 minutes of running
+  description: run for 30 minutes
 - !ruby/struct:TrainingDayStruct
   mileage_low: 26
   mileage_high: 26
