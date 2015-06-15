@@ -1,0 +1,6 @@
+tr
+  td= week.start_date_string
+  - week.training_days.each do |day|
+    td= day.mileage_string
+  td= week.mileage_string
+

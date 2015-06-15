@@ -1,13 +1,15 @@
-table.table-striped.table-hover
-  thead
-    th Date
-    th Mileage
-    th Description
+h2= pretty_date(@training_day.date)
+
+- if @training_day == nil
+  h1 Training hasn't started, do whatever you want :)
+- else
+  h1= @training_day.today_string
+
+table.table.table-bordered
+  = render "/shared/training_week_header"
   tbody
-    - TrainingDay.order("date ASC").each do |day|
-      tr
-        td= day.date
-        td= day.mileage_string
-        td= day.description
+    = render "/shared/training_week_table", week: @training_week
+
+hr
 
 

@@ -1,21 +1,8 @@
-table.table.table-striped.table-hover
-  thead
-    th Date
-    th Monday
-    th Tuesday
-    th Wednesday
-    th Thursday
-    th Friday
-    th Saturday
-    th Sunday
-    th Mileage
+table.table.table-striped.table-hover.table-bordered
+  = render "/shared/training_week_header"
   tbody
-    - @training_plan.training_weeks.each_with_index do |week, index|
-      tr
-        td= week.start_date_string
-        - week.training_days.each do |day|
-          td= day.mileage_string
-        td= week.mileage_string
+    - @training_plan.training_weeks.each do |week|
+      = render "/shared/training_week_table", week: week
 
 
 

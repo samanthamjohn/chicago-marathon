@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'slim-rails'
+gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 
 group :development do

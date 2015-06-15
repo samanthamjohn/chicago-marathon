@@ -11,4 +11,11 @@ class TrainingPlan
       self.training_weeks << TrainingWeek.new(date)
     end
   end
+
+  def training_week_for_date(date)
+    date = date.beginning_of_week
+    self.training_weeks.each do |week|
+      return week if week.start_date = date
+    end
+  end
 end
