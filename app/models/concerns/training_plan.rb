@@ -1,5 +1,5 @@
 class TrainingPlan
-  MARATHON_DATE = Date.parse("Nov 1, 2015")
+  MARATHON_DATE = Date.parse("Dec 6, 2015")
 
   attr_accessor :training_weeks
 

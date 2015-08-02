@@ -15,6 +15,6 @@ store = YAML::Store.new("lib/assets/training_plan.store")
 training_plan_data = store.transaction { store["training_days"] }
 
 training_plan_data.each do |training_day|
-  TrainingDay.create(date: training_day.date, description: training_day.description, mileage_low: training_day.mileage_low, mileage_high: training_day.mileage_high)
+  TrainingDay.create(date: training_day.date + 5.weeks, description: training_day.description, mileage_low: training_day.mileage_low, mileage_high: training_day.mileage_high)
 end
 
