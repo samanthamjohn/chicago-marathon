@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :training_days, only: [:index]
+  resources :training_days, only: [:index, :show]
   resources :training_plan, only: [:index]
   root "training_days#index"
 

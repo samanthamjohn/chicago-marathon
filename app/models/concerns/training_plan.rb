@@ -1,6 +1,4 @@
 class TrainingPlan
-  MARATHON_DATE = Date.parse("Dec 6, 2015")
-
   attr_accessor :training_weeks
 
   def initialize
@@ -14,6 +12,7 @@ class TrainingPlan
 
   def training_week_for_date(date)
     date = date.beginning_of_week
+    puts date
     self.training_weeks.each do |week|
       return week if week.start_date = date
     end

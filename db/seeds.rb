@@ -14,7 +14,12 @@ TrainingDayStruct = Struct.new :mileage_low, :mileage_high, :date, :description
 store = YAML::Store.new("lib/assets/training_plan.store")
 training_plan_data = store.transaction { store["training_days"] }
 
+
+current_date = MARATHON_DATE - (training_plan_data.count).days
+
 training_plan_data.each do |training_day|
-  TrainingDay.create(date: training_day.date + 5.weeks, description: training_day.description, mileage_low: training_day.mileage_low, mileage_high: training_day.mileage_high)
+  day = TrainingDay.create(date: current_date, description: training_day.description, mileage_low: training_day.mileage_low, mileage_high: training_day.mileage_high)
+  puts day.date
+  current_date += 1.days
 end
 

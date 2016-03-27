@@ -1,5 +1,6 @@
 tr
-  td= week.start_date_string
+  - start_date = week.start_date_string
+  td= link_to(start_date, training_day_path(week.start_date))
   - week.training_days.each do |day|
     td= day.mileage_string
   td= week.mileage_string

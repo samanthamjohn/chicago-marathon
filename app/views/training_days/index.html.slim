@@ -1,15 +1,15 @@
-h2= pretty_date(@training_day.date)
 
 - if @training_day == nil
   h1 Training hasn't started, do whatever you want :)
 - else
+  h2= pretty_date(@training_day.date)
   h1= @training_day.today_string
 
-table.table.table-bordered
-  = render "/shared/training_week_header"
-  tbody
-    = render "/shared/training_week_table", week: @training_week
+  table.table.table-bordered
+    = render "/shared/training_week_header"
+    tbody
+      = render "/shared/training_week_table", week: @training_week
 
-hr
+  hr
 
 
