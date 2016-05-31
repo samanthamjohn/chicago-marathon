@@ -9,13 +9,13 @@
 require 'yaml/store'
 TrainingDay.destroy_all
 
-TrainingDayStruct = Struct.new :mileage_low, :mileage_high, :date, :description
+TrainingDayStruct = Struct.new :mileage_low, :mileage_high, :description
 
 store = YAML::Store.new("lib/assets/training_plan.store")
 training_plan_data = store.transaction { store["training_days"] }
 
 
-current_date = MARATHON_DATE - (training_plan_data.count).days
+current_date = MARATHON_DATE - (training_plan_data.count).days + 1
 
 training_plan_data.each do |training_day|
   day = TrainingDay.create(date: current_date, description: training_day.description, mileage_low: training_day.mileage_low, mileage_high: training_day.mileage_high)
